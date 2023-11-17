@@ -1,6 +1,6 @@
-# Code from Week x
+# Code from Week 14
 
-A repository containing the examples from the worksheet.
+A repository containing the examples from the worksheet and lecture.
 
 ## Contents
 
