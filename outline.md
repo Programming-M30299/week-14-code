@@ -2,7 +2,7 @@
 
 ## Chapter 1: Errors vs exceptions
 
-- **Errors**: Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:
+### **Errors**: Syntax errors, also known as parsing errors, are perhaps the most common kind of complaint you get while you are still learning Python:
 ```
 >>> while True print('Hello world')
   File "<stdin>", line 1, in ?
@@ -11,7 +11,23 @@
 SyntaxError: invalid syntax
 ```
 
-- Explain tracebacks and how to read them.
+### **Exceptions**: Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions. Give a few examples of exceptions such as `ZeroDivisionError`, `NameError` and `TypeError`.
+```
+>>> 10 * (1/0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+ZeroDivisionError: division by zero
+>>> 4 + spam*3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+NameError: name 'spam' is not defined
+>>> '2' + 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+```
+
+
+### **Tracebacks**: Explain tracebacks and how to read them.
 ```
 >>> open("/path/to/mars.jpg")
 Traceback (most recent call last):
@@ -39,21 +55,6 @@ Traceback (most recent call last):
   File "/tmp/config.py", line 3, in main
     configuration = open('config.txt')
 IsADirectoryError: [Errno 21] Is a directory: 'config.txt'
-```
-
-- **Exceptions**: Even if a statement or expression is syntactically correct, it may cause an error when an attempt is made to execute it. Errors detected during execution are called exceptions. Give a few examples of exceptions such as `ZeroDivisionError`, `NameError` and `TypeError`.
-```
->>> 10 * (1/0)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in ?
-ZeroDivisionError: division by zero
->>> 4 + spam*3
-Traceback (most recent call last):
-  File "<stdin>", line 1, in ?
-NameError: name 'spam' is not defined
->>> '2' + 2
-Traceback (most recent call last):
-  File "<stdin>", line 1, in ?
 ```
 
 ## Chapter 2: Handling exceptions
