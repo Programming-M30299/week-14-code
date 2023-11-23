@@ -419,26 +419,73 @@ class CoffeeShop:
 
 ## Lecture multiple choice questions
 
-1. What are three elements that you might find in a traceback? 
-    A file path, line number, and Python version
-    A Python version, file path, and function name
-    A file path, line number, and exception
+2. **What does the `try` block do?**
+   - A. It tests a block of code for errors.
+   - B. It executes code regardless of the result of error handling.
+   - C. It only runs if no errors are found in the code.
+   - D. It declares variables used in error handling.
+   - F. It checks the syntax of the enclosed code.
 
-2. What two keywords would you use for handling exceptions? 
-    try and except
-    try and catch
-    try and unless
+The correct answer is: A because the `try` block lets you test a block of code for errors.
 
-3. Why would using except Exception be unhelpful? 
-    Because it can show a traceback with limited information
-    Because it can hide what the real problem is
-    Because you can't raise another exception
 
-4. When can it be useful to use as err in an except block? 
-    When you want to raise another exception
-    When you want to reuse or inspect an exception
-    When you want to avoid having a traceback in the output
+
 5. What is the right syntax to catch two exceptions in the same except line? 
     raise (ValueError, TypeError)
     except ValueError, TypeError:
     except (ValueError, TypeError):
+    except ValueError or TypeError:
+
+The correct answer is: except (ValueError, TypeError):
+
+
+
+
+
+
+
+Let's talk about section 1 of chapter 3 (introduction to debugging)
+I want to teach the students some basic concepts of debugging before showing them how to use the debugger in Thonny.
+
+And then I want to show them how to debug in Thonny (I will also add links how to do it in other IDEs like PyCharm and Visual Studio Code so don't worry about that).
+
+Content for slides and worksheets (bullet points for slides, short instructions for worksheets). Paraphrase the content below in your own words.
+
+Thonny has a "debugger," which lets us walk through our program step-by-step to actually see what it is doing. At the top of the Thonny window, next to the run button, you will see a series of buttons that look like this:
+[Image will be added here](#)
+
+The buttons at the top of the Thonny window starting with the run button (a white triangle in a green circle). Next to that there's a debug button, whose icon looks like a bug, and then a series of grayed-out buttons with different yellow arrows on them. Finally, there's the 🛑 button, which is a red stop sign.
+[Image will be added here](#)
+
+To activate the debugger, simply click on the button that looks like a 🪲 (the creepy-crawly kind), instead of the normal run button. When you do that, the buttons will change so that they look like this:
+[Image will be added here](#)
+
+These buttons allow you to control the flow of the program step-by-step, and Thonny will show you exactly what is happening by highlighting the part of the code being evaluated. Note that it can only debug a program (in the top window), not code in the shell (the bottom window).
+
+Try it out
+In the `pract14.py` add the following functions:
+
+```python
+def mystery(a, b):
+    print(a, b)
+
+def main():
+    a = 7
+    b = 3
+    mystery(b, a)
+```
+
+Now, click the debug button and then use the "step into" button (the middle yellow button with an arrow pointing down between two lines) to go through the steps of this program.
+
+Before you step through it completely, take a guess at how many steps are in this program (it's more than you might think).
+
+The next time you're stuck on something, try using the debugger to see what's happening in detail.
+
+Breakpoints
+Since programs have so many steps, it may take a while to get to the part of your code that you're interested in when debugging. To speed things up, you can set a "breakpoint" by clicking on the left-hand margin where the line numbers are. A red dot will appear in the margin near whichever line you clicked on (as long as it wasn't a comment or a blank line where there isn't any code). If you set a breakpoint on line 3 of `pract14.py` it will look like this:
+[Image will be added here](#)
+
+The code in `pract14.py`, as displayed in Thonny, with a red dot in the
+left margin next to the start of the third line.
+
+Now, if you run in debug mode, it will fast forward straight to that line of code, and if you use the "Resume" button while debugging, it will also stop as soon as it gets to any line of code with a breakpoint on it. To remove a breakpoint, simply click the line number again.
