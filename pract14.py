@@ -1,7 +1,5 @@
-x = 0
-while True:
-    string = input("Enter a number: ")
-    if string.isdigit():
-        x = int(string)
-        break
-    print("Oops!  That was no valid number.  Try again...")
+x = "Hello"
+try:
+    print(x + 10)
+except TypeError:
+    print("Type error occurred")
