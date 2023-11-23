@@ -4,4 +4,5 @@ def readFile(filename):
             content = file.read()
             return content
     except FileNotFoundError:
+        print("File not found")
         return None
