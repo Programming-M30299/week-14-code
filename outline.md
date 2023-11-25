@@ -84,8 +84,6 @@ if __name__ == '__main__':
     main()
 ```
 
-- Explain when it is appropriate and non appropriate to use `try` statements. For example if asking a number from the user, you can check using `isalpha()` if the input is a number or not. If it is not a number, you can ask the user to enter a number again. In this case, you do not need to use `try` statements and an `if` statement is enough.
-
 
 ## Chapter 3: Debugging
 
@@ -104,7 +102,6 @@ FileNotFoundError: [Errno 2] No such file or directory: '/path/to/mars.jpg'
 - Explain the concept of breakpoints and how to use them in Thonny, PyCharm and Visual Studio Code. Introduce some sample programs and show how to use breakpoints to debug them.
 - Explain the concept of stepping through the code and how to use it in Thonny, PyCharm and Visual Studio Code.
 
-As examples you can have a medium sized textual program like:
 ```python
 
 from random import random
@@ -214,7 +211,8 @@ def main():
     app.run()
 ```
 
-Ideally I want you to change the sample code, presenting an issue in the code and then teach them to use debugging tools to find the issue.
+
+Can you suggest some exercises for the worksheet that tests the student's knowledge of what we have studied so far? You can either provide code snippets (functions or programs) and then ask them to debug them or add error handling. Or ask them to write code from scratch ensuring that it is robust under certain types of input or GUI interactions.
 
 
 ## Programming exercises:
