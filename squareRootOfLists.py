@@ -25,7 +25,7 @@ def main():
         4: [48.13, 17.87, 45.52, -39.44, 16.84, -15.94, 34.27, 41.43],
         5: [-43.82, -42.23, 43.06, 3.18, -12.98, 20.48],
     }
-    data.items()
+
     for key, value in data.items():
         print(f"List {key} has the following numbers: {value}")
         print(f"The processed value of this list is {processList(value)}")
