@@ -4,8 +4,9 @@ A repository containing the examples from the worksheet and lecture.
 
 ## Contents
 
-- `practx.py` - A file containing the examples from the worksheet.
-  Copy the contents of this file into yours and run the functions to see what they do.
-- `README.md` - This file.
-- `.gitignore` - A file telling git to ignore certain files (e.g. `.pyc` files).
-  You do not need to worry about this file for now.
+- `lect14.py` - Code from the lecture
+- `calculator.py` - A simple calculator app
+- `sumOfNumbers.py` - A program that calculates the sum of a list of numbers
+- `squareRootOfLists.py` - A program that calculates the square root of a list of numbers
+- `wc.py` - A program that counts the number of lines, words and characters in a file
+- `coffeeShop` - A folder that contains the code for the coffee shop app from week 13
