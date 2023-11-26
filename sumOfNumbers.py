@@ -1,10 +1,10 @@
-def sumOfList(list, length):
+def sumOfList(numbers, length):
     total = 0
     if length == 0:
         return 0
     else:
         for i in range(length):
-            number = float(list[i])
+            number = float(numbers[i])
             total += number
         return total
 
