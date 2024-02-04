@@ -2,6 +2,7 @@ from tkinter import *
 
 
 class Calculator:
+    
     def __init__(self):
         self.win = Tk()
         self.win.title("Calculator")

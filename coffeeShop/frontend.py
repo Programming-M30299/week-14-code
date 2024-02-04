@@ -3,6 +3,7 @@ from backend import CoffeeShop
 
 
 class CoffeeShopApp:
+    
     def __init__(self, coffeeShop):
         self.coffeeShop = coffeeShop
 

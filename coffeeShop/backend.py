@@ -1,4 +1,5 @@
 class CoffeeShop:
+    
     def __init__(self):
         self.customers = []
 
