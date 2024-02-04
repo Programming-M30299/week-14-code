@@ -275,12 +275,12 @@ class Calculator:
         )
         btnMultiply.pack(side="left")
 
-        btnClear = Button(
+        btnClose = Button(
             self.mainFrame,
-            text="Clear",
-            command=self.win.quit
+            text="Close",
+            command=self.win.destroy
         )
-        btnClear.pack(side="right")
+        btnClose.pack(side="right")
 
     def multiply(self):
         num1 = self.num1.get()

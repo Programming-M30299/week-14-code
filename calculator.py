@@ -60,12 +60,12 @@ class Calculator:
         )
         btnDivide.pack(side="right")
 
-        btnClear = Button(
+        btnClose = Button(
             self.mainFrame,
-            text="Clear",
-            command=self.win.quit
+            text="Close",
+            command=self.win.destroy
         )
-        btnClear.pack(side="center")
+        btnClose.pack(side="center")
 
     def multiply(self):
         num1 = self.num1.get()
