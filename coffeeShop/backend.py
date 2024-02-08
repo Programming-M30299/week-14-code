@@ -6,7 +6,7 @@ class CoffeeShop:
     def addCustomer(self, name):
         self.customers.append(name)
 
-    def removeCustomerAt(self, index):
+    def removeCustomerAt(self, index=0):
         del self.customers[index]
 
     def getCustomerAt(self, index):
