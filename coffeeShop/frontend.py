@@ -53,7 +53,8 @@ class CoffeeShopApp:
         )
 
         numCustomers = self.coffeeShop.getNumCustomers()
-        for i in range(numCustomers):
+        i = 0
+        while i <= numCustomers:
             customer = self.coffeeShop.getCustomerAt(i)
             customerLabel = Label(
                 self.mainFrame,
@@ -70,7 +71,7 @@ class CoffeeShopApp:
             removeCustomerButton = Button(
                 self.mainFrame,
                 text="Remove",
-                command=lambda index=i: self.removeCustomer(index)
+                command=lambda: self.removeCustomer(i)
             )
             removeCustomerButton.grid(
                 row=i+1,
@@ -79,6 +80,7 @@ class CoffeeShopApp:
                 pady=5,
             )
             self.customerWidgets.append(removeCustomerButton)
+            i = i + 1
 
     def addCustomer(self):
         name = self.newCustomerName.get()
