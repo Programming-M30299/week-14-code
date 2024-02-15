@@ -6,6 +6,7 @@ class PosApp:
     def __init__(self):
         self.win = Tk()
         self.win.title("POS System")
+        self.win.geometry("300x100")
 
         self.mainFrame = Frame(self.win)
         self.mainFrame.pack(padx=10, pady=10)
@@ -36,6 +37,7 @@ class PosApp:
     def createNewWin(self, totalLabel):
         newWin = Toplevel(self.win)
         newWin.title("Add Item to Bill")
+        newWin.geometry("200x150")
 
         newWinFrame = Frame(newWin)
         newWinFrame.pack(padx=10, pady=10)
@@ -70,3 +72,6 @@ class PosApp:
 def main():
     app = PosApp()
     app.run()
+
+
+main()
