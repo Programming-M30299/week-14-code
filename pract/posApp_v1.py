@@ -60,15 +60,18 @@ class PosApp:
         addButton.pack(padx=5, pady=5)
 
     def updateBill(self, totalLabel, newWin):
+        newValue = 0.00
         try:
-            newTotal = self.total.get() + self.newItemPrice.get()
-            self.total.set(newTotal)
-            self.newItemPrice.set(0.00)
-            totalLabel.config(
-                text=f"Total Bill: £{self.total.get():.2f}")
-            newWin.destroy()
+            newValue = self.newItemPrice.get()
         except Exception:
-            print("Invalid input")
+            print("The value entered is not a number")
+
+        newTotal = self.total.get() + newValue
+        self.total.set(newTotal)
+        self.newItemPrice.set(0.00)
+        totalLabel.config(
+            text=f"Total Bill: £{self.total.get():.2f}")
+        newWin.destroy()
 
 
 def main():
