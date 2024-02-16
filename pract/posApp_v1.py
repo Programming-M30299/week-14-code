@@ -65,10 +65,11 @@ class PosApp:
             newValue = self.newItemPrice.get()
         except Exception:
             print("The value entered is not a number")
+            return
 
         if newValue <= 0:
             print("The value entered is not a positive number")
-            newValue = 0
+            return
 
         newTotal = self.total.get() + newValue
         self.total.set(newTotal)
