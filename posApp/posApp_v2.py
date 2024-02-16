@@ -58,8 +58,7 @@ class PosApp:
         addButton = Button(
             newWinFrame,
             text="Add to Bill",
-            command=lambda: self.updateBill(
-                totalLabel, newWin, infoLabel)
+            command=lambda: self.updateBill(totalLabel, newWin, infoLabel)
         )
 
         addButton.pack(padx=5, pady=5)
@@ -93,6 +92,3 @@ class PosApp:
 def main():
     app = PosApp()
     app.run()
-
-
-main()
