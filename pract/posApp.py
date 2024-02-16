@@ -54,8 +54,7 @@ class PosApp:
         addButton = Button(
             newWinFrame,
             text="Add to Bill",
-            command=lambda: self.updateBill(
-                totalLabel, newWin)
+            command=lambda: self.updateBill(totalLabel, newWin)
         )
         addButton.pack(padx=5, pady=5)
 
@@ -63,8 +62,7 @@ class PosApp:
         newTotal = self.total.get() + self.newItemPrice.get()
         self.total.set(newTotal)
         self.newItemPrice.set(0.00)
-        totalLabel.config(
-            text=f"Total Bill: £{self.total.get():.2f}")
+        totalLabel.config(text=f"Total Bill: £{self.total.get():.2f}")
 
         newWin.destroy()
 
