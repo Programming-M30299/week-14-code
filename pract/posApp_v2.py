@@ -51,36 +51,42 @@ class PosApp:
         )
         itemPriceEntry.pack(padx=5, pady=5)
 
-        addButton = Button(
-            newWinFrame,
-            text="Add to Bill",
-            command=lambda: self.updateBill(
-                totalLabel, newWin)
-        )
-        addButton.pack(padx=5, pady=5)
-
         infoLabel = Label(
             newWinFrame,
             text="Please enter the price of the item."
         )
+        addButton = Button(
+            newWinFrame,
+            text="Add to Bill",
+            command=lambda: self.updateBill(
+                totalLabel, newWin, infoLabel)
+        )
+
+        addButton.pack(padx=5, pady=5)
         infoLabel.pack(padx=5, pady=5)
 
-    def updateBill(self, totalLabel, newWin):
+    def updateBill(self, totalLabel, newWin, infoLabel):
         newValue = 0.00
         try:
             newValue = self.newItemPrice.get()
         except Exception:
-            print("The value entered is not a number")
+            infoLabel.config(
+                fg="red",
+                text="The value entered is not a number",
+            )
+            return
 
         if newValue <= 0:
-            print("The value entered is not a positive number")
-            newValue = 0
+            infoLabel.config(
+                fg="red",
+                text="The value entered is not a positive number",
+            )
+            return
 
         newTotal = self.total.get() + newValue
         self.total.set(newTotal)
         self.newItemPrice.set(0.00)
-        totalLabel.config(
-            text=f"Total Bill: £{self.total.get():.2f}")
+        totalLabel.config(text=f"Total Bill: £{self.total.get():.2f}")
         newWin.destroy()
 
 
