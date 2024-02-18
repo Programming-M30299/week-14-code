@@ -37,7 +37,7 @@ class PosApp:
     def createNewWin(self, totalLabel):
         newWin = Toplevel(self.win)
         newWin.title("Add Item to Bill")
-        newWin.geometry("250x175")
+        newWin.geometry("300x175")
 
         newWinFrame = Frame(newWin)
         newWinFrame.pack(padx=10, pady=10)
