@@ -1,8 +1,8 @@
 def readFile(filename):
     try:
-        inFile = open(filename, 'r')
-        content = inFile.read()
-        inFile.close()
+        file = open(filename, 'r')
+        content = file.read()
+        file.close()
         return content
     except FileNotFoundError:
         print("File not found")
