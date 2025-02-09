@@ -1,15 +1,15 @@
-from tkinter import *
+from tkinter import Tk, Frame, Entry, Button, Label, StringVar, IntVar
 
 
 class Calculator:
-    
+
     def __init__(self):
         self.win = Tk()
         self.win.title("Calculator")
         self.win.geometry("200x150")
 
-        self.mainFrame = Frame(self.win)
-        self.mainFrame.pack()
+        self.main_frame = Frame(self.win)
+        self.main_frame.pack()
 
         self.num1 = IntVar()
         self.num2 = IntVar()
@@ -17,56 +17,56 @@ class Calculator:
         self.result.set("Result: 0")
 
     def run(self):
-        self.createWidgets()
+        self.create_widgets()
         self.win.mainloop()
 
-    def createWidgets(self):
-        lblNum1 = Label(self.mainFrame, text="Number 1:")
-        lblNum1.pack()
+    def create_widgets(self):
+        label_num1 = Label(self.main_frame, text="Number 1:")
+        label_num1.pack()
 
-        entryNum1 = Entry(
-            self.mainFrame,
+        entry_num1 = Entry(
+            self.main_frame,
             width=20,
             textvariable=self.num1
         )
-        entryNum1.pack()
+        entry_num1.pack()
 
-        lblNum2 = Label(self.mainFrame, text="Number 2:")
-        lblNum2.pack()
+        label_num2 = Label(self.main_frame, text="Number 2:")
+        label_num2.pack()
 
-        entryNum2 = Entry(
-            self.mainFrame,
+        entry_num2 = Entry(
+            self.main_frame,
             width=20,
             textvariable=self.num2
         )
-        entryNum2.pack()
+        entry_num2.pack()
 
-        lblResult = Label(
-            self.mainFrame,
+        label_result = Label(
+            self.main_frame,
             textvariable=self.result
         )
-        lblResult.pack()
+        label_result.pack()
 
-        btnMultiply = Button(
-            self.mainFrame,
+        btn_multiply = Button(
+            self.main_frame,
             text="Multiply",
             command=self.multiply
         )
-        btnMultiply.pack(side="left")
+        btn_multiply.pack(side="left")
 
-        btnDivide = Button(
-            self.mainFrame,
+        btn_divide = Button(
+            self.main_frame,
             text="Divide",
             # command= ...
         )
-        btnDivide.pack(side="right")
+        btn_divide.pack(side="right")
 
-        btnClose = Button(
-            self.mainFrame,
+        btn_close = Button(
+            self.main_frame,
             text="Close",
             command=self.win.destroy
         )
-        btnClose.pack(side="center")
+        btn_close.pack(side="center")
 
     def multiply(self):
         num1 = self.num1.get()

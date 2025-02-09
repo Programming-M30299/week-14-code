@@ -1,4 +1,4 @@
-def readFile(filename):
+def read_file(filename):
     try:
         file = open(filename, 'r')
         content = file.read()
@@ -12,10 +12,10 @@ def readFile(filename):
         return None
 
 
-def getChoice():
+def get_choice():
     choice = input("Enter a number: ")
     while not choice.isdigit():
         print("That's not a number!")
         choice = input("Enter a number: ")
-    choiceAsInt = int(choice)  # Can raise a `ValueError`
-    return choiceAsInt
+    choice_as_int = int(choice)  # Can raise a `ValueError`
+    return choice_as_int

@@ -1,7 +1,7 @@
 from math import sqrt
 
 
-def sumOfList(numbers, length):
+def sum_of_list(numbers, length):
     total = 0
     if length == 0:
         return 0
@@ -12,8 +12,8 @@ def sumOfList(numbers, length):
         return total
 
 
-def processList(numbers):
-    total = sumOfList(numbers, 5)
+def process_list(numbers):
+    total = sum_of_list(numbers, 5)
     return sqrt(total)
 
 
@@ -28,7 +28,7 @@ def main():
 
     for key, value in data.items():
         print(f"List {key} has the following numbers: {value}")
-        print(f"The processed value of this list is {processList(value)}")
+        print(f"The processed value of this list is {process_list(value)}")
 
 
 main()

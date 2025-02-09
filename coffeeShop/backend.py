@@ -1,16 +1,16 @@
 class CoffeeShop:
-    
+
     def __init__(self):
         self.customers = []
 
-    def addCustomer(self, name):
+    def add_customer(self, name):
         self.customers.append(name)
 
-    def removeCustomerAt(self, index=0):
+    def remove_customer_at(self, index=0):
         del self.customers[index]
 
-    def getCustomerAt(self, index):
+    def get_customer_at(self, index):
         return self.customers[index]
 
-    def getNumCustomers(self):
+    def get_num_customers(self):
         return len(self.customers)

@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, Frame, Entry, Button, Label, DoubleVar, Toplevel
 
 
 class PosApp:
@@ -8,85 +8,85 @@ class PosApp:
         self.win.title("POS System")
         self.win.geometry("300x100")
 
-        self.mainFrame = Frame(self.win)
-        self.mainFrame.pack(padx=10, pady=10)
+        self.main_frame = Frame(self.win)
+        self.main_frame.pack(padx=10, pady=10)
 
         self.total = DoubleVar()
         self.total.set(0.00)
 
-        self.newItemPrice = DoubleVar()
+        self.new_item_price = DoubleVar()
 
     def run(self):
-        self.createWidgets()
+        self.create_widgets()
         self.win.mainloop()
 
-    def createWidgets(self):
-        totalLabel = Label(
-            self.mainFrame,
+    def create_widgets(self):
+        total_label = Label(
+            self.main_frame,
             text=f"Total Bill: £{self.total.get():.2f}"
         )
-        totalLabel.pack(padx=5, pady=5)
+        total_label.pack(padx=5, pady=5)
 
-        addItemButton = Button(
-            self.mainFrame,
+        add_item_button = Button(
+            self.main_frame,
             text="Add Item",
-            command=lambda: self.createNewWin(totalLabel)
+            command=lambda: self.create_new_win(total_label)
         )
-        addItemButton.pack(padx=5, pady=5)
+        add_item_button.pack(padx=5, pady=5)
 
-    def createNewWin(self, totalLabel):
-        newWin = Toplevel(self.win)
-        newWin.title("Add Item to Bill")
-        newWin.geometry("300x175")
+    def create_new_win(self, total_label):
+        new_win = Toplevel(self.win)
+        new_win.title("Add Item to Bill")
+        new_win.geometry("300x175")
 
-        newWinFrame = Frame(newWin)
-        newWinFrame.pack(padx=10, pady=10)
+        new_win_frame = Frame(new_win)
+        new_win_frame.pack(padx=10, pady=10)
 
-        itemPriceLabel = Label(newWinFrame, text="Item Price (£):")
-        itemPriceLabel.pack(padx=5, pady=5)
+        item_price_label = Label(new_win_frame, text="Item Price (£):")
+        item_price_label.pack(padx=5, pady=5)
 
-        itemPriceEntry = Entry(
-            newWinFrame,
-            textvariable=self.newItemPrice
+        item_price_entry = Entry(
+            new_win_frame,
+            textvariable=self.new_item_price
         )
-        itemPriceEntry.pack(padx=5, pady=5)
+        item_price_entry.pack(padx=5, pady=5)
 
-        infoLabel = Label(
-            newWinFrame,
+        info_label = Label(
+            new_win_frame,
             text="Please enter the price of the item."
         )
-        addButton = Button(
-            newWinFrame,
+        add_button = Button(
+            new_win_frame,
             text="Add to Bill",
-            command=lambda: self.updateBill(totalLabel, newWin, infoLabel)
+            command=lambda: self.update_bill(total_label, new_win, info_label)
         )
 
-        addButton.pack(padx=5, pady=5)
-        infoLabel.pack(padx=5, pady=5)
+        add_button.pack(padx=5, pady=5)
+        info_label.pack(padx=5, pady=5)
 
-    def updateBill(self, totalLabel, newWin, infoLabel):
-        newValue = 0.00
+    def update_bill(self, total_label, new_win, info_label):
+        new_value = 0.00
         try:
-            newValue = self.newItemPrice.get()
+            new_value = self.new_item_price.get()
         except Exception:
-            infoLabel.config(
+            info_label.config(
                 fg="red",
                 text="The value entered is not a number",
             )
             return
 
-        if newValue <= 0:
-            infoLabel.config(
+        if new_value <= 0:
+            info_label.config(
                 fg="red",
                 text="The value entered is not a positive number",
             )
             return
 
-        newTotal = self.total.get() + newValue
-        self.total.set(newTotal)
-        self.newItemPrice.set(0.00)
-        totalLabel.config(text=f"Total Bill: £{self.total.get():.2f}")
-        newWin.destroy()
+        new_total = self.total.get() + new_value
+        self.total.set(new_total)
+        self.new_item_price.set(0.00)
+        total_label.config(text=f"Total Bill: £{self.total.get():.2f}")
+        new_win.destroy()
 
 
 def main():

@@ -1,110 +1,110 @@
-from tkinter import *
+from tkinter import Tk, Frame, Entry, Button, Label, StringVar
 from backend import CoffeeShop
 
 
 class CoffeeShopApp:
-    
-    def __init__(self, coffeeShop):
-        self.coffeeShop = coffeeShop
+
+    def __init__(self, coffee_shop):
+        self.coffee_shop = coffee_shop
 
         self.win = Tk()
         self.win.title("Coffee Shop")
 
-        self.mainFrame = Frame(self.win)
-        self.mainFrame.grid(
+        self.main_frame = Frame(self.win)
+        self.main_frame.grid(
             row=0,
             column=0,
             padx=10,
             pady=10,
         )
 
-        self.newCustomerName = StringVar()
+        self.new_customer_name = StringVar()
 
-        self.customerWidgets = []
+        self.customer_widgets = []
 
     def run(self):
-        self.createWidgets()
+        self.create_widgets()
         self.win.mainloop()
 
-    def createWidgets(self):
-        self.deleteAllCustomerWidgets()
+    def create_widgets(self):
+        self.delete_customer_widgets()
 
-        customerEntry = Entry(
-            self.mainFrame,
-            textvariable=self.newCustomerName
+        customer_entry = Entry(
+            self.main_frame,
+            textvariable=self.new_customer_name
         )
-        customerEntry.grid(
+        customer_entry.grid(
             row=0,
             column=0,
             padx=5,
             pady=5,
         )
 
-        addCustomerButton = Button(
-            self.mainFrame,
+        add_customer_button = Button(
+            self.main_frame,
             text="Add",
-            command=self.addCustomer
+            command=self.add_customer
         )
-        addCustomerButton.grid(
+        add_customer_button.grid(
             row=0,
             column=1,
             padx=5,
             pady=5,
         )
 
-        numCustomers = self.coffeeShop.getNumCustomers()
+        num_customers = self.coffee_shop.get_num_customers()
         i = 0
-        while i <= numCustomers:
-            customer = self.coffeeShop.getCustomerAt(i)
-            customerLabel = Label(
-                self.mainFrame,
+        while i <= num_customers:
+            customer = self.coffee_shop.get_customer_at(i)
+            customer_label = Label(
+                self.main_frame,
                 text=customer
             )
-            customerLabel.grid(
+            customer_label.grid(
                 row=i+1,
                 column=0,
                 padx=5,
                 pady=5,
             )
-            self.customerWidgets.append(customerLabel)
+            self.customer_widgets.append(customer_label)
 
-            removeCustomerButton = Button(
-                self.mainFrame,
+            remove_customer_button = Button(
+                self.main_frame,
                 text="Remove",
-                command=lambda: self.removeCustomer(i)
+                command=lambda: self.remove_customer(i)
             )
-            removeCustomerButton.grid(
+            remove_customer_button.grid(
                 row=i+1,
                 column=1,
                 padx=5,
                 pady=5,
             )
-            self.customerWidgets.append(removeCustomerButton)
+            self.customer_widgets.append(remove_customer_button)
             i = i + 1
 
-    def addCustomer(self):
-        name = self.newCustomerName.get()
-        self.coffeeShop.addCustomer(name)
-        self.createWidgets()
-        self.newCustomerName.set("")
+    def add_customer(self):
+        name = self.new_customer_name.get()
+        self.coffee_shop.add_customer(name)
+        self.create_widgets()
+        self.new_customer_name.set("")
 
-    def removeCustomer(self, index):
-        self.coffeeShop.removeCustomerAt(index)
-        self.createWidgets()
+    def remove_customer(self, index):
+        self.coffee_shop.remove_customer_at(index)
+        self.create_widgets()
 
-    def deleteAllCustomerWidgets(self):
-        for widget in self.customerWidgets:
+    def delete_customer_widgets(self):
+        for widget in self.customer_widgets:
             widget.destroy()
 
 
 def main():
-    coffeeShop = CoffeeShop()
+    coffee_shop = CoffeeShop()
 
-    coffeeShop.addCustomer("Alice")
-    coffeeShop.addCustomer("Bob")
-    coffeeShop.addCustomer("Charlie")
+    coffee_shop.add_customer("Alice")
+    coffee_shop.add_customer("Bob")
+    coffee_shop.add_customer("Charlie")
 
-    app = CoffeeShopApp(coffeeShop)
+    app = CoffeeShopApp(coffee_shop)
     app.run()
 
 

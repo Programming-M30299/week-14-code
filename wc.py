@@ -1,11 +1,11 @@
 def wc(filename):
     with open(filename, 'r') as f:
         text = f.read()
-    numberOfCharacters = len(text)
-    listOfWords = text.split()
-    numberOfWords = len(listOfWords)
-    numberOfLines = text.count('\n')
-    return numberOfCharacters, numberOfWords, numberOfLines
+    number_of_characters = len(text)
+    list_of_words = text.split()
+    number_of_words = len(list_of_words)
+    number_of_lines = text.count('\n')
+    return number_of_characters, number_of_words, number_of_lines
 
 
 def main():
