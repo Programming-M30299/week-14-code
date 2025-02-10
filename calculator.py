@@ -47,26 +47,26 @@ class Calculator:
         )
         label_result.pack()
 
-        btn_multiply = Button(
+        button_multiply = Button(
             self.main_frame,
             text="Multiply",
             command=self.multiply
         )
-        btn_multiply.pack(side="left")
+        button_multiply.pack(side="left")
 
-        btn_divide = Button(
+        button_divide = Button(
             self.main_frame,
             text="Divide",
             # command= ...
         )
-        btn_divide.pack(side="right")
+        button_divide.pack(side="right")
 
-        btn_close = Button(
+        button_close = Button(
             self.main_frame,
             text="Close",
             command=self.win.destroy
         )
-        btn_close.pack(side="center")
+        button_close.pack(side="center")
 
     def multiply(self):
         num1 = self.num1.get()
