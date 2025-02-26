@@ -14,6 +14,7 @@ def read_file(filename):
 
 def get_choice():
     choice = input("Enter a number: ")
+    choice_as_int = 0
     while not choice.isdigit():
         print("That's not a number!")
         choice = input("Enter a number: ")
