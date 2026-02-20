@@ -66,7 +66,7 @@ class Calculator:
             text="Close",
             command=self.win.destroy
         )
-        button_close.pack(side="center")
+        button_close.pack()
 
     def multiply(self):
         num1 = self.num1.get()
